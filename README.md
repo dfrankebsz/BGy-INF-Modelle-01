@@ -1,14 +1,14 @@
 # Modell-Detektive – digitaler Informatik-Lernkurs
 
 **Thema:** Grundlagen informatischer Modelle, Berufliches Gymnasium, Klasse 11.  
-**Stand:** 23. November 2026.  
+**Stand:** 24. November 2026 · Version 3 (dynamische Kapitelzähler).  
 **Stack:** Reines HTML/CSS/JavaScript, Netlify Functions, Netlify Blobs und PDFKit. **Keine Supabase-Datenbank und kein allgemeiner `AUTH`-Schlüssel.**
 
 ## Inhalt
 
 Der Kurs enthält die Inhalte der beigefügten Präsentation *Grundlagen Modelle_2026_Skript.pptx*: Modellbegriff, Original/Abstraktion, fünf Modellzwecke, vier Modellarten, Abbildungs-, Verkürzungs- und pragmatisches Merkmal, vier Modellgrenzen und die Fallstudie zu verzögerten Kundenbestellungen.
 
-- Fünf Kapitel mit **inhaltlich gewichteter Aufgabenanzahl** (4 / 6 / 9 / 10 / 11; insgesamt 40 reguläre Aufgaben). Einfache Einführungen enthalten weniger Übungen, Eigenschaften, Grenzen und Modellbeurteilung entsprechend mehr. Über alle regulären Aufgaben gilt: AFB I 25 %, AFB II 50 %, AFB III 25 %.
+- Fünf Kapitel mit **automatisch angezeigter, inhaltlich gewichteter Aufgabenanzahl** (4 / 6 / 9 / 10 / 11; insgesamt 40 reguläre Aufgaben). Einfache Einführungen enthalten weniger Übungen, Eigenschaften, Grenzen und Modellbeurteilung entsprechend mehr. Über alle regulären Aufgaben gilt: AFB I 25 %, AFB II 50 %, AFB III 25 %.
 - Fünf Bonusaufgaben (AFB II/III), zusätzlich auf die vertiefenden Kapitel konzentriert: 0 / 1 / 1 / 1 / 2.
 - Abschlusstest mit zehn Aufgaben und Selbstcheck mit neun Kompetenzen (Skala 1–5).
 - Interaktive Karten, Kostenfunktion, Modellabstraktion, Angebots-/Nachfragegrafik und Vergleich von Organigramm, Umsatz- und Prozessdiagramm.
@@ -69,3 +69,7 @@ Den Link von Netlify Dev im Browser öffnen. Ein einfacher lokaler HTML-Dateiauf
 - `assets/karte-a.jpg`, `assets/karte-b.jpg`: Zwei Karten aus der vom Nutzer bereitgestellten Präsentation (ältere geografische und schematische U-Bahn-Karte). Vor öffentlichem Einsatz Bildrechte und Quellenkennzeichnung beachten.
 
 **Quelle der fachlichen Kursinhalte:** Vom Auftraggeber bereitgestellte Präsentation *Grundlagen Modelle_2026_Skript.pptx* und Auszug des Informatik-Lehrplans Berufliches Gymnasium Sachsen 2026 (LB 2). Aus Gründen der inhaltlichen Zuverlässigkeit sind CampusMerch und die Zahlenbeispiele ausdrücklich fiktiv. Die Lehrkraft sollte vor dem Einsatz die Darstellung und alle Musterlösungen fachlich prüfen.
+
+## Korrektur in Version 3
+
+Die Version 2 enthielt zwei fest hinterlegte `/8`-Anzeigen. In Version 3 beziehen sowohl die linke Navigation als auch die Kapitel-Fortschrittsanzeige den Nenner aus der tatsächlichen Anzahl der Aufgaben im Kapitel. Bei künftigen Änderungen in `course-data.js` werden die Zähler automatisch angepasst. Nach dem Austausch der Dateien die neue GitHub-Version zu Netlify deployen (ggf. **Clear cache and deploy site**). Die Dateiverweise im HTML enthalten zur Vermeidung älterer Browser-Caches den Versionsparameter `v=3`.
