@@ -7,8 +7,11 @@ for(const t of [...TASKS,...TEST]){
  if(t.type!=='text' && !grade(t,expectedValue(t))) errors.push('Korrekte Antwort wird nicht erkannt: '+t.id);
  if(t.type==='single' && (t.correct<0 || t.correct>=t.options.length)) errors.push('Index '+t.id);
 }
-for(const c of CHAPTERS){const ts=TASKS.filter(t=>t.chapter===c.id&&!t.bonus);for(let afb=1;afb<=3;afb++){ if(ts.filter(t=>t.afb===afb).length<2)errors.push('Zu wenige Aufgaben in '+c.id+' AFB '+afb); }}
+for(const c of CHAPTERS){const ts=TASKS.filter(t=>t.chapter===c.id&&!t.bonus);for(let afb=1;afb<=3;afb++){ if(ts.filter(t=>t.afb===afb).length<1)errors.push('Zu wenige Aufgaben in '+c.id+' AFB '+afb); }}
 const counts=[1,2,3].map(afb=>TASKS.filter(t=>!t.bonus&&t.afb===afb).length);
-console.log('Kursaufgaben:',TASKS.length,'Test:',TEST.length,'Verteilung [nur Autorenprüfung]:',counts,'Kapitel:',CHAPTERS.length);
+const distribution=CHAPTERS.map(ch=>TASKS.filter(t=>t.chapter===ch.id&&!t.bonus).length);
+if(distribution.join(',')!=='4,6,9,10,11')errors.push('Kapitelzahlen entsprechen nicht der differenzierten Gewichtung: '+distribution);
+if(counts.join(',')!=='10,20,10')errors.push('AFB-Verteilung muss 25/50/25 sein: '+counts);
+console.log('Kursaufgaben:',TASKS.length,'Test:',TEST.length,'Verteilung [nur Autorenprüfung]:',counts,'Kapitel:',CHAPTERS.length,'Aufgaben pro Kapitel:',distribution);
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('Inhaltsprüfung bestanden.');

@@ -2,12 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CHAPTERS,TASKS,TEST,ALL_TASKS,grade,expectedValue,earnedXp,wallet,newProgress,SHOP} from '../course-data.js';
 
-test('fünf Kapitel, acht reguläre Aufgaben pro Kapitel, Bonus und Abschlusstest',()=>{
+test('inhaltlich gewichtete Kapitel mit insgesamt 40 regulären Aufgaben, Bonus und Abschlusstest',()=>{
  assert.equal(CHAPTERS.length,5);
  assert.equal(TASKS.filter(t=>!t.bonus).length,40);
  assert.equal(TASKS.filter(t=>t.bonus).length,5);
  assert.equal(TEST.length,10);
- CHAPTERS.forEach(c=>{const items=TASKS.filter(t=>t.chapter===c.id&&!t.bonus);assert.equal(items.length,8);for(const a of [1,2,3])assert.equal(items.filter(t=>t.afb===a).length,[0,2,4,2][a]);});
+ const distribution=[4,6,9,10,11];
+ CHAPTERS.forEach((c,i)=>{const items=TASKS.filter(t=>t.chapter===c.id&&!t.bonus);assert.equal(items.length,distribution[i]);for(const a of [1,2,3])assert.ok(items.some(t=>t.afb===a),c.id+' AFB '+a);});
+ assert.deepEqual([1,2,3].map(a=>TASKS.filter(t=>!t.bonus&&t.afb===a).length),[10,20,10]);
+ assert.deepEqual(CHAPTERS.map(c=>TASKS.filter(t=>t.chapter===c.id&&t.bonus).length),[0,1,1,1,2]);
 });
 test('alle vorgegebenen korrekten Antworten werden als korrekt erkannt',()=>{
  for(const task of ALL_TASKS){if(task.type==='text')assert.equal(grade(task,'Eine Begründung'),null);else assert.equal(grade(task,expectedValue(task)),true,task.id);}

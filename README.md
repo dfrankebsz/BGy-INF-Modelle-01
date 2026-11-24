@@ -8,8 +8,8 @@
 
 Der Kurs enthält die Inhalte der beigefügten Präsentation *Grundlagen Modelle_2026_Skript.pptx*: Modellbegriff, Original/Abstraktion, fünf Modellzwecke, vier Modellarten, Abbildungs-, Verkürzungs- und pragmatisches Merkmal, vier Modellgrenzen und die Fallstudie zu verzögerten Kundenbestellungen.
 
-- Fünf Kapitel mit je acht regulären Aufgaben (insgesamt 40), je zwei Aufgaben zu AFB I und III sowie vier zu AFB II.
-- Fünf Bonusaufgaben (AFB II/III).
+- Fünf Kapitel mit **inhaltlich gewichteter Aufgabenanzahl** (4 / 6 / 9 / 10 / 11; insgesamt 40 reguläre Aufgaben). Einfache Einführungen enthalten weniger Übungen, Eigenschaften, Grenzen und Modellbeurteilung entsprechend mehr. Über alle regulären Aufgaben gilt: AFB I 25 %, AFB II 50 %, AFB III 25 %.
+- Fünf Bonusaufgaben (AFB II/III), zusätzlich auf die vertiefenden Kapitel konzentriert: 0 / 1 / 1 / 1 / 2.
 - Abschlusstest mit zehn Aufgaben und Selbstcheck mit neun Kompetenzen (Skala 1–5).
 - Interaktive Karten, Kostenfunktion, Modellabstraktion, Angebots-/Nachfragegrafik und Vergleich von Organigramm, Umsatz- und Prozessdiagramm.
 - Multiple Choice (einzeln/mehrfach), Richtig/Falsch, Kategorisierung und Drag-and-Drop mit Touch-/Tastatur-Alternative, Zuordnung, Reihenfolge, Zahleneingabe, Freitext mit Musterlösung.
